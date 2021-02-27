@@ -5,6 +5,8 @@ import time
 from push import push
 _push=push()
 
+TG_BOT_TOKEN=os.environ["TG_BOT_TOKEN"]
+TG_USER_ID=os.environ["TG_USER_ID"]
 uid=os.environ["uid"]
 token=os.environ["token"]
 data={
@@ -58,12 +60,38 @@ def sign():
         #累计获得的钱
         curMoney = json.loads(res.text)['data']['curMoney']
         output(f'\n[+]打卡成功，累计获得：{curMoney}')
+        
+def tgBotNotify(TG_BOT_TOKEN,TG_USER_ID, text, desp):
+    if TG_BOT_TOKEN != '' or TG_USER_ID != '':
+
+        url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
+        headers = {'Content-type': "application/x-www-form-urlencoded"}
+        body = 'chat_id=' + TG_USER_ID + '&text=' + \
+            parse.quote(text) + '\n\n' + parse.quote(desp) + \
+            '&disable_web_page_preview=true'
+        response = json.dumps(requests.post(
+            url, data=body, headers=headers).json(), ensure_ascii=False)
+
+        data = json.loads(response)
+        if data['ok'] == True:
+            print('\nTelegram发送通知消息完成\n')
+        elif data['error_code'] == 400:
+            print('\n请主动给bot发送一条消息并检查接收用户ID是否正确。\n')
+        elif data['error_code'] == 401:
+            print('\nTelegram bot token 填写错误。\n')
+        else:
+            print('\n发送通知调用API失败！！\n')
+            print(data)
+    else:
+        print('\n您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知\n')
+        pass
 def main():
     #查询用户打卡信息
     userinfo()
     #打卡
     sign()
     #信息推送
+    tgBotNotify(TG_BOT_TOKEN,TG_USER_ID, 'tt打卡', '')
     #钉钉推送
     try:
         _push.dingtalk(contents)
