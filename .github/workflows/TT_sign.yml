@@ -28,6 +28,8 @@ jobs:
       - name: '运行TT语音打卡脚本'  
         run: python3 TT_sign.py 
         env:
+            TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+            TG_USER_ID: ${{ secrets.TG_USER_ID }}
             uid: ${{ secrets.uid }}
             token: ${{ secrets.token }}
             dingding: ${{ secrets.dingding }}
