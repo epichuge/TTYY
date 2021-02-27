@@ -16,12 +16,12 @@ headers={
         'Host': 'node.52tt.com',
         'Content-Type': 'application/json',
         'Origin': 'http://appcdn.52tt.com',
-        'Accept-Encoding': 'br, gzip, deflate',
+        'Accept-Encoding': 'gzip, deflate, br',
         'Connection': 'keep-alive',
         'Accept':'*/*',
-        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 TT/5.5.6 NetType/Wifi',
-        'Referer': 'http://appcdn.52tt.com/web/frontend-web-activity-new-user-clock-in-thirty-day/index.html',
-        'Content-Length': '526',
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 TT/5.5.6 NetType/Wifi',
+        'Referer': 'http://appcdn.52tt.com/web/frontend-web-activity-new-user-clock-in-thirty-day/index.html?device_id=20210227174522688e93947e7498c1efe14e2700be1b93019b7acfdff021ea&ip=36.24.163.25&uid=216913098&version=84213766&appid=0&os_type=2&platform=1&app=0&market_id=0',
+        'Content-Length': '525',
         'Accept-Language': 'zh-cn',
     }
 
