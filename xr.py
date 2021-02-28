@@ -9,11 +9,11 @@ _push=push()
 
 TG_BOT_TOKEN=os.environ["TG_BOT_TOKEN"]
 TG_USER_ID=os.environ["TG_USER_ID"]
-uid=os.environ["xr_uid"]
-token=os.environ["xr_token"]
+xr_uid=os.environ["xr_uid"]
+xr_token=os.environ["xr_token"]
 data={
-        "uid" : uid,
-        "token" : token,
+        "uid" : xr_uid,
+        "token" : xr_token,
     }
 TTbody=data
 headers={'Host':' node.52tt.com','Content-Type':' application/json','Origin':' http//appcdn.52tt.com','Accept-Encoding':' gzip, deflate, br','Connection':' keep-alive','Accept':' */*','User-Agent':' Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 TT/5.5.6 NetType/Wifi','Referer':' http//appcdn.52tt.com/web/frontend-web-activity-new-user-clock-in-thirty-day/index.html?device_id=20210227194145441e63abf8c8c8b668e9a095710586c7019c7cec81ab128e&ip=36.24.163.25&uid=216716743&version=84213766&appid=0&os_type=2&platform=1&app=0&market_id=0','Content-Length':' 575','Accept-Language':' zh-cn'}
