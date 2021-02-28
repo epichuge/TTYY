@@ -93,7 +93,7 @@ def main():
     #打卡
     sign()
     #信息推送
-    tgBotNotify(TG_BOT_TOKEN,TG_USER_ID, 'tt打卡', '')
+    tgBotNotify(TG_BOT_TOKEN,TG_USER_ID, contents, '')
     #钉钉推送
     try:
         _push.dingtalk(contents)
