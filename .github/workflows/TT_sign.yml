@@ -26,7 +26,7 @@ jobs:
         run: pip install -r ./requirements.txt 
         
       - name: '运行TT语音打卡脚本'  
-        run: python3 TT_sign.py iphonee.py xr.py
+        run: python3 TT_sign.py & python3 iphonee.py & python3 xr.py
         env:
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
             TG_USER_ID: ${{ secrets.TG_USER_ID }}
