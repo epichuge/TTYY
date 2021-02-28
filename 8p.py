@@ -9,8 +9,8 @@ _push=push()
 
 TG_BOT_TOKEN=os.environ["TG_BOT_TOKEN"]
 TG_USER_ID=os.environ["TG_USER_ID"]
-uid=os.environ["8p_uid"]
-token=os.environ["8p_token"]
+uid=os.environ["p_uid"]
+token=os.environ["p_token"]
 data={
         "uid" : uid,
         "token" : token,
